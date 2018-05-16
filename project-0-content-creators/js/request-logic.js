@@ -4,5 +4,21 @@
 
 
 function getContentType(filename) {
-  const extension = filename.match(/.*\.([^\.]*)$/)[1];
+  let extension = filename.match(/.*\.([^\.]*)$/)[1];
+	if (extension === 'html'){
+		extension = 'text/html';
+}
+	else if (extension === 'css') {
+		extension = 'text/css';
+}
+	else if (extension === 'jpeg'){
+		extension = 'image/jpeg';
+}
+	else if (extension === 'jpg') {
+		extension = 'image/jpeg';
+}
+	else {
+		extension = 'text/plain';
+}
+  return extension;
 }
